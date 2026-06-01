@@ -12,7 +12,7 @@
   <div className="w-full bg-gray-200 h-2 rounded mb-3">
     <div className="bg-red-500 h-2 rounded" style={{ width: "95%" }}></div>
   </div>
-
+  
   <p>React</p>
   <div className="w-full bg-gray-200 h-2 rounded mb-3">
     <div className="bg-red-500 h-2 rounded" style={{ width: "85%" }}></div>
