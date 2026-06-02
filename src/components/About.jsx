@@ -24,12 +24,12 @@ export default function About() {
 
       <div>
         <h2 className="text-2xl font-bold mb-4">Skills</h2>
-        <p>HTML & CSS</p>
+        <p>HTML, CSS & JS </p>
         <div className="w-full bg-gray-200 h-2 rounded mb-3">
           <div className="bg-red-500 h-2 rounded w-full"></div>
         </div>
 
-        <p>JavaScript</p>
+        <p>REACT AND EXPRESS</p>
         <div className="w-full bg-gray-200 h-2 rounded mb-3">
           <div className="bg-red-500 h-2 rounded w-[95%]"></div>
         </div>
@@ -38,6 +38,7 @@ export default function About() {
         <div className="w-full bg-gray-200 h-2 rounded mb-3">
           <div className="bg-red-500 h-2 rounded w-[75%]"></div>
         </div>
+        
        <h2 className="text-2xl font-bold mt-8 mb-4">Languages</h2>
 
   <p>Nepali</p>
