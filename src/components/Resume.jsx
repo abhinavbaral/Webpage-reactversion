@@ -36,41 +36,42 @@ const experienceData = [
     year: "2026",
     title: "Eastern Auto Distributor Intern",
     location: "Biratnagar, Nepal",
-    subtitle: "Developed websites ",
+    subtitle: "Developed responsive business website and UI improvements",
   },
 ];
 
 function Timeline({ data }) {
   return (
-    <div className="w-full mt-3">
-      {data.map((item, index) => (
-        <div key={index} className="flex flex-row h-30">
+    <div className="relative mt-6">
 
-          {/* Year */}
-          <div className="pt-3 max-w-25">
-            <p className="text-2xl text-right px-6 my-3">
-              {item.year}
-            </p>
+      <div className="absolute left-24 top-0 bottom-0 w-0.5 bg-red-500" />
+
+      <div className="space-y-10">
+        {data.map((item, index) => (
+          <div key={index} className="flex items-start">
+
+        
+            <div className="w-24 pr-6 text-right">
+              <p className="text-2xl">{item.year}</p>
+            </div>
+
+      
+            <div className="relative flex items-start justify-center w-6">
+              <div className="w-3 h-3 bg-red-500 rounded-full mt-2" />
+            </div>
+
+    
+            <div className="pl-6 space-y-1">
+              <h2 className="text-lg">{item.title}</h2>
+              <h3 className="text-sm text-gray-600 hidden xl:block">
+                {item.location}
+              </h3>
+              <h4 className="text-sm">{item.subtitle}</h4>
+            </div>
+
           </div>
-
-          {/* Line + Dot */}
-          <div className="w-0.75 h-full bg-red-500 relative">
-            <div className="w-3 h-3 -translate-x-1 translate-y-8 rounded-full bg-red-500 absolute" />
-          </div>
-
-          {/* Content */}
-          <div className="w-full text-left space-y-1 pt-3 px-6">
-            <h2 className="text-lg">{item.title}</h2>
-
-            <h3 className="text-md hidden xl:block">
-              {item.location}
-            </h3>
-
-            <h4 className="text-sm">{item.subtitle}</h4>
-          </div>
-
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
@@ -78,7 +79,7 @@ function Timeline({ data }) {
 function Section({ title, data }) {
   return (
     <div className="w-full md:w-1/2 px-4">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-2xl font-semibold">{title}</h2>
       <Timeline data={data} />
     </div>
   );
@@ -87,17 +88,10 @@ function Section({ title, data }) {
 export default function Resume() {
   return (
     <section id="resume" className="bg-gray-50 py-20 px-6">
-      
       <div className="flex flex-col md:flex-row gap-10">
-
-        {/* Education */}
         <Section title="Education" data={educationData} />
-
-        {/* Experience */}
         <Section title="Work Experience" data={experienceData} />
-
       </div>
-
     </section>
   );
 }
