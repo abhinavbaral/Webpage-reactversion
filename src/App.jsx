@@ -19,10 +19,10 @@ export default function App() {
       <Navbar setShowIntro={setShowIntro} />
 
      <Hero />
+           <About />
+             <Stats />
+                 <Resume />
       <Portfolio />
-      <About />
-      <Stats />
-      <Resume />
       <Contact />
       <Footer />
       
