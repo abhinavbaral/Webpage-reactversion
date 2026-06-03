@@ -5,7 +5,7 @@ export default function About() {
       <div>
         <h2 className="text-2xl font-bold mb-4">Who am I?</h2>
         <p className="text-gray-600">
-          I’m a web designer and front-end developer passionate about building clean, modern websites.
+          I’m a web designer and Developer passionate about building clean, modern websites.
         </p>
       </div>
 

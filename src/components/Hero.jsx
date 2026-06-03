@@ -24,7 +24,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-3 text-lg">
-          Front-end Developer | Content Writer | Web Designer
+          Developer | Content Writer | Web Designer
         </p>
 
         {/* SOCIAL ICONS */}
