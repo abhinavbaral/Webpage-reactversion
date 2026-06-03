@@ -7,7 +7,12 @@ export default function About() {
         <p className="text-gray-600">
        I'm a inhabitant of Jhapa District, Koshi Province, Nepal.
         My curiosity for computer and technology began when I used to spend hours on playing Bully Scholarship Edition and Mini Militia during my childhood.
-         Coming from there, after few years, the first step in programming journey began 
+         Coming from there, after few years, the first step in programming journey began when I started learning HTML, CSS and JS in 2020.
+         Since then, I've been on a continuous learning path, exploring various programming languages and technologies. 
+         I have a strong passion for web development and enjoy creating interactive and user-friendly websites.
+          I'm always eager to take on new challenges.
+       
+
         </p>
       </div>
 
