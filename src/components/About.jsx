@@ -9,9 +9,6 @@ export default function About() {
         My curiosity for computer and technology began when I used to spend hours on playing Bully Scholarship Edition and Mini Militia during my childhood.
          Coming from there, after few years, the first step in programming journey began when I started learning HTML, CSS and JS in 2020. Since then, I have been on a continuous learning path, 
          exploring various technologies and am always eager to take on new challenges.
-       
-       
-
         </p>
       </div>
 
