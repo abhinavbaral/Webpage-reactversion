@@ -8,8 +8,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-
-        {/* TITLE */}
+        
         <h2 className="text-3xl font-bold text-center mb-10">
           Portfolio
         </h2>
@@ -18,7 +17,7 @@ export default function Portfolio() {
           A selection of my real projects from GitHub and live deployments.
         </p>
 
-        {/* PROJECT GRID (NOW DYNAMIC) */}
+    
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <div
@@ -56,7 +55,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* HIRE ME BUTTON */}
+      
         <div className="text-center mt-12">
           <h3 className="text-xl font-semibold">
             Need a website?
@@ -72,7 +71,6 @@ export default function Portfolio() {
 
       </div>
 
-      {/* MODAL */}
       {showContact && (
         <ContactModal onClose={() => setShowContact(false)} />
       )}

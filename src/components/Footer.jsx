@@ -2,8 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-20">
       <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
-
-        {/* ABOUT */}
+      
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">
             Abhinav Baral
@@ -23,7 +22,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* QUICK LINKS */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">
             Quick Links
@@ -37,7 +35,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* SOCIAL / CTA */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">
             Let’s connect
@@ -57,7 +54,6 @@ export default function Footer() {
 
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between text-sm">
           <p>© 2026 Abhinav Baral. All rights reserved.</p>

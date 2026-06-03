@@ -12,10 +12,8 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* content */}
       <div className="relative z-10 px-6">
         <h4 className="text-lg">Hello, I am</h4>
 
@@ -27,7 +25,6 @@ export default function Hero() {
           Developer | Content Writer | Web Designer
         </p>
 
-        {/* SOCIAL ICONS */}
         <div className="flex justify-center gap-6 mt-6 text-2xl">
 
           <a
@@ -68,7 +65,6 @@ export default function Hero() {
 
         </div>
 
-        {/* CTA */}
         <div className="mt-8">
           <a
             href="#portfolio"

@@ -15,19 +15,17 @@ export default function App() {
 
   return (
     <>
-      {/* NAVBAR ALWAYS VISIBLE */}
+  
       <Navbar setShowIntro={setShowIntro} />
 
-      {/* MAIN PAGE */}
-      <Hero />
+     <Hero />
       <Portfolio />
       <About />
       <Stats />
       <Resume />
       <Contact />
       <Footer />
-
-      {/* INTRO OVERLAY */}
+      
       {showIntro && (
         <FullIntro onClose={() => setShowIntro(false)} />
       )}

@@ -17,7 +17,7 @@ export default function FullIntro({ onClose }) {
   return (
     <section className="fixed inset-0 bg-black text-white flex flex-col lg:flex-row items-center justify-center gap-16 px-10 z-50">
 
-      {/* BACK BUTTON (icon only) */}
+     
       <button
         onClick={onClose}
         className="absolute top-6 left-6 text-2xl hover:text-red-500 hover:-translate-x-1 transition"
@@ -25,8 +25,7 @@ export default function FullIntro({ onClose }) {
       >
         <FiArrowLeft />
       </button>
-
-      {/* IMAGE */}
+=
       <div>
         <img
           src={profileImg}
@@ -34,8 +33,7 @@ export default function FullIntro({ onClose }) {
           alt="profile"
         />
       </div>
-
-      {/* CONTENT */}
+]
       <div className="max-w-xl">
         <h1 className="text-5xl font-bold">
           Hi, It's <span className="text-red-500">Abhinav</span>

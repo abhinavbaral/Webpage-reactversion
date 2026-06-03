@@ -6,14 +6,14 @@ export default function Navbar({ setShowIntro }) {
     <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
 
-        {/* LEFT: PROFILE */}
+  
         <img
           src={profile}
           alt="Abhinav Baral"
           className="w-10 h-10 rounded-full object-cover border"
         />
 
-        {/* CENTER: NAV LINKS */}
+      
         <nav className="hidden md:flex gap-6 text-sm">
           <a href="#home" className="hover:text-red-500">Home</a>
           <a href="#about" className="hover:text-red-500">About</a>
@@ -23,7 +23,6 @@ export default function Navbar({ setShowIntro }) {
           <a href="#contact" className="hover:text-red-500">Contact</a>
         </nav>
 
-        {/* RIGHT: OPEN INTRO ICON */}
         <button
           onClick={() => setShowIntro(true)}
           className="text-2xl hover:text-red-500 hover:translate-x-1 transition"
