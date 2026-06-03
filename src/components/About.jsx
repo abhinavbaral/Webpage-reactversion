@@ -1,74 +1,69 @@
-export default function About() {
+const timelineData = [
+  {
+    year: "2015",
+    title: "Shree Seven Seas Secondary English School",
+    location: "Shivasatakshi, Jhapa",
+    subtitle: "Class 7",
+  },
+  {
+    year: "2018",
+    title: "Shree Bhanu Secondary School",
+    location: "Shivasatakshi, Jhapa",
+    subtitle: "Secondary Education Examination (Class 10)",
+  },
+  {
+    year: "2021",
+    title: "Shree Saraswati Secondary School",
+    location: "Damak, Jhapa",
+    subtitle: "School Leaving Certificate (Class 10 + 2)",
+  },
+  {
+    year: "2026",
+    title: "Shreeyantra College",
+    location: "Damak, Jhapa",
+    subtitle: "BSc. CSIT",
+  },
+];
+
+function Timeline() {
   return (
-    <section id="about" className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-10">
-      
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Who am I?</h2>
-        <p className="text-gray-600">
-       I'm a inhabitant of Jhapa District, Koshi Province, Nepal.
-        My curiosity for computer and technology began when I used to spend hours on playing Bully Scholarship Edition and Mini Militia during my childhood.
-         Coming from there, after few years, the first step in programming journey began when I started learning HTML, CSS and JS in 2020.
-         Since then, I've been on a continuous learning path, exploring various programming languages and technologies. 
-         I have a strong passion for web development and enjoy creating interactive and user-friendly websites.
-          I'm always eager to take on new challenges.
-       
+    <div className="w-full mt-3">
+      {timelineData.map((item, index) => (
+        <div key={index} className="flex flex-row h-30">
 
-        </p>
-      </div>
+          {/* Year */}
+          <div className="pt-3 max-w-25">
+            <p className="text-2xl text-right px-6 my-3">
+              {item.year}
+            </p>
+          </div>
 
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Personal Info</h2>
-        <ul className="space-y-2 text-gray-600">
-          <li>🎂 04/12/2005</li>
-          <li>
-            📧 <a className="text-red-500" href="mailto:abhinavbaral@gmail.com">Email</a>
-          </li>
-          <li>
-            📞 <a className="text-red-500" href="tel:+9779842795750">Phone</a>
-          </li>
-        </ul>
-      </div>
+          {/* Line + Dot */}
+          <div className="w-0.75 h-full bg-red-500 relative">
+            <div className="w-3 h-3 -translate-x-1 translate-y-8 rounded-full bg-red-500 absolute" />
+          </div>
 
-      <div>
-        <h2 className="text-2xl font-bold mb-4">Skills</h2>
-        <p>HTML, CSS & JS </p>
-        <div className="w-full bg-gray-200 h-2 rounded mb-3">
-          <div className="bg-red-500 h-2 rounded w-full"></div>
+          {/* Content */}
+          <div className="w-full text-left space-y-1 pt-3 px-6">
+            <h2 className="text-lg">{item.title}</h2>
+
+            <h3 className="text-md hidden xl:block">
+              {item.location}
+            </h3>
+
+            <h4 className="text-sm">{item.subtitle}</h4>
+          </div>
+
         </div>
+      ))}
+    </div>
+  );
+}
 
-        <p>REACT AND EXPRESS</p>
-        <div className="w-full bg-gray-200 h-2 rounded mb-3">
-          <div className="bg-red-500 h-2 rounded w-[95%]"></div>
-        </div>
-
-        <p>PHP</p>
-        <div className="w-full bg-gray-200 h-2 rounded mb-3">
-          <div className="bg-red-500 h-2 rounded w-[75%]"></div>
-        </div>
-        
-       <h2 className="text-2xl font-bold mt-8 mb-4">Languages</h2>
-
-  <p>Nepali</p>
-  <div className="w-full bg-gray-200 h-2 rounded mb-3">
-    <div className="bg-red-500 h-2 rounded" style={{ width: "100%" }}></div>
-  </div>
-
-  <p>English</p>
-  <div className="w-full bg-gray-200 h-2 rounded mb-3">
-    <div className="bg-red-500 h-2 rounded" style={{ width: "90%" }}></div>
-  </div>
-
-  <p>Hindi</p>
-  <div className="w-full bg-gray-200 h-2 rounded mb-3">
-    <div className="bg-red-500 h-2 rounded" style={{ width: "90%" }}></div>
-  </div>
-
-  <p>Japanese</p>
-  <div className="w-full bg-gray-200 h-2 rounded mb-3">
-    <div className="bg-red-500 h-2 rounded" style={{ width: "5%" }}></div>
-  </div>
-
-</div>
+export default function Resume() {
+  return (
+    <section id="resume" className="bg-gray-50 py-20 px-6">
+      <Timeline />
     </section>
   );
 }
