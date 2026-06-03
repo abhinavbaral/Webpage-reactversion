@@ -5,7 +5,9 @@ export default function About() {
       <div>
         <h2 className="text-2xl font-bold mb-4">Who am I?</h2>
         <p className="text-gray-600">
-          I’m a web designer and Developer passionate about building clean, modern websites.
+       I'm a inhabitant of Jhapa District, Koshi Province, Nepal.
+        My curiosity for computer and technology began when I used to spend hours on playing Bully Scholarship Edition and Mini Militia during my childhood.
+         Coming from there, after few years, the first step in programming journey began 
         </p>
       </div>
 

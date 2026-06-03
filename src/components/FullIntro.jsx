@@ -45,7 +45,7 @@ export default function FullIntro({ onClose }) {
         </h3>
 
         <p className="text-gray-300 mt-4">
-          I build clean and modern web experiences.
+     I’m a web designer and Developer passionate about building clean, modern websites.
         </p>
       </div>
 

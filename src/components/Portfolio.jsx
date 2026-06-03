@@ -58,14 +58,14 @@ export default function Portfolio() {
       
         <div className="text-center mt-12">
           <h3 className="text-xl font-semibold">
-            Need a website?
+          Let's build something Amazing together!
           </h3>
-
+<p> I'm always open to discuss about new ideas, projects, or oppurtunities</p>
           <button
             onClick={() => setShowContact(true)}
             className="mt-4 bg-red-500 text-white px-6 py-2 rounded-lg"
           >
-            Hire Me
+            Contact Me
           </button>
         </div>
 
