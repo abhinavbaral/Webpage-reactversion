@@ -23,14 +23,14 @@ const Skills = () => {
   ];
 
   const backend = [
-    { name: "Node.js", icon: <RiNodejsFill className="text-green-500 text-xl" /> },
+    { name: "Node.js", icon: <RiNodejsFill className="text-red-500 text-xl" /> },
     { name: "Express", icon: <SiExpress className="text-gray-300 text-xl" /> },
   ];
 
   const database = [
     { name: "MySQL", icon: <SiMysql className="text-blue-600 text-xl" /> },
     { name: "PostgreSQL", icon: <SiPostgresql className="text-indigo-400 text-xl" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-400 text-xl" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-red-400 text-xl" /> },
   ];
 
   const tools = [
