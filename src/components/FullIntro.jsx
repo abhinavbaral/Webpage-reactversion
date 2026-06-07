@@ -25,7 +25,6 @@ export default function FullIntro({ onClose }) {
       >
         <FiArrowLeft />
       </button>
-=
       <div>
         <img
           src={profileImg}
@@ -33,7 +32,6 @@ export default function FullIntro({ onClose }) {
           alt="profile"
         />
       </div>
-]
       <div className="max-w-xl">
         <h1 className="text-5xl font-bold">
           Hi, It's <span className="text-red-500">Abhinav</span>
