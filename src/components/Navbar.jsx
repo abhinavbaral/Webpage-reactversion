@@ -6,8 +6,8 @@ export default function Navbar({ setShowIntro }) {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#stats", label: "Stats" },
-    { href: "#skills", label: "Skills" },
     { href: "#resume", label: "Resume" },
+    { href: "#skills", label: "Skills" },
     { href: "#portfolio", label: "Portfolio" },
     { href: "#contact", label: "Contact" },
   ];

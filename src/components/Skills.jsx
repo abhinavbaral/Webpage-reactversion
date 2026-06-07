@@ -54,8 +54,8 @@ const Skills = () => {
 
   return (
     <section 
-    id="skills"
-    className="text-white py-10">
+    className="bg-gray-900 text-white py-10"
+    id="skills">
       <h2 className="text-3xl font-bold mb-6">Skills</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
