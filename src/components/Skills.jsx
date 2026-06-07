@@ -40,7 +40,7 @@ const Skills = () => {
 
   const SkillCard = ({ title, items }) => (
     <div className="bg-[#1f2937] p-6 rounded-xl border border-gray-700">
-      <h3 className="text-green-400 text-xl mb-4">{title}</h3>
+      <h3 className="text-red-500 text-xl mb-4">{title}</h3>
       <div className="grid grid-cols-2 gap-4 text-sm">
         {items.map((item) => (
           <div key={item.name} className="flex items-center gap-2">
