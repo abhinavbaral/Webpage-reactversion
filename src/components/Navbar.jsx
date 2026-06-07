@@ -18,6 +18,7 @@ export default function Navbar({ setShowIntro }) {
           <a href="#home" className="hover:text-red-500">Home</a>
           <a href="#about" className="hover:text-red-500">About</a>
           <a href="#stats" className="hover:text-red-500">Stats</a>
+          <a href="#skills" className="hover:text-red-500">Skills</a>
           <a href="#resume" className="hover:text-red-500">Resume</a>
           <a href="#portfolio" className="hover:text-red-500">Portfolio</a>
           <a href="#contact" className="hover:text-red-500">Contact</a>
