@@ -21,6 +21,7 @@ export default function App() {
      <Hero />
            <About />
              <Stats />
+             <skill/>
                  <Resume />
       <Portfolio />
       <Contact />

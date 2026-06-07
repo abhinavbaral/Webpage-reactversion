@@ -18,16 +18,28 @@ const educationData = [
     subtitle: "School Leaving Certificate (Class 10 + 2)",
   },
   {
-    year: "2026",
+    year: "2022/2023",
     title: "Model Campus Damak",
     location: "Damak-5, Jhapa",
     subtitle: "BCA Student",
+  },
+    {
+    year: "2026/2027",
+    title: "Model Campus Damak",
+    location: "Damak-5, Jhapa",
+    subtitle: "Finished BCA final year ",
   },
 ];
 
 const experienceData = [
   {
-    year: "2025",
+    year: "2024/2025",
+    title: " Looking for Part-time Jobs ",
+    location: "Damak",
+    subtitle: " Wasn't Activey searching",
+  }, 
+  {
+    year: "2025/2026",
     title: "Frontend Developer Intern",
     location: "Techdebugger, Damak",
     subtitle: "Built UI components using React and Tailwind CSS",

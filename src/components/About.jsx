@@ -25,7 +25,7 @@ export default function About() {
         </ul>
       </div>
 
-      <div>
+      {/* <div>
         <h2 className="text-2xl font-bold mb-4">Skills</h2>
         <p>HTML, CSS & JS </p>
         <div className="w-full bg-gray-200 h-2 rounded mb-3">
@@ -41,7 +41,8 @@ export default function About() {
         <div className="w-full bg-gray-200 h-2 rounded mb-3">
           <div className="bg-red-500 h-2 rounded w-[75%]"></div>
         </div>
-        
+        </div> */}
+        <div>
        <h2 className="text-2xl font-bold mt-8 mb-4">Languages</h2>
 
   <p>Nepali</p>
