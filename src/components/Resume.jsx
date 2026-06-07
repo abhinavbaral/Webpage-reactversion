@@ -18,28 +18,28 @@ const educationData = [
     subtitle: "School Leaving Certificate (Class 10 + 2)",
   },
   {
-    year: "2022/2023",
+    year: ["2022", "2023"],
     title: "Model Campus Damak",
     location: "Damak-5, Jhapa",
     subtitle: "BCA Student",
   },
-    {
-    year: "2026/2027",
+  {
+    year: ["2026", "2027"],
     title: "Model Campus Damak",
     location: "Damak-5, Jhapa",
-    subtitle: "Finished BCA final year ",
+    subtitle: "Finished BCA final year",
   },
 ];
 
 const experienceData = [
   {
-    year: "2024/2025",
-    title: " Looking for Part-time Jobs ",
+    year: ["2024", "2025"],
+    title: "Looking for Part-time Jobs",
     location: "Damak",
-    subtitle: " Wasn't Activey searching",
-  }, 
+    subtitle: "Wasn't actively searching",
+  },
   {
-    year: "2025/2026",
+    year: ["2025", "2026"],
     title: "Frontend Developer Intern",
     location: "Techdebugger, Damak",
     subtitle: "Built UI components using React and Tailwind CSS",
@@ -52,6 +52,20 @@ const experienceData = [
   },
 ];
 
+
+const renderYear = (year) => {
+  if (Array.isArray(year)) {
+    return (
+      <>
+        {year[0]}
+        <br />
+        {year[1]}
+      </>
+    );
+  }
+  return year;
+};
+
 function Timeline({ data }) {
   return (
     <div className="relative mt-6">
@@ -60,18 +74,28 @@ function Timeline({ data }) {
       <div className="space-y-10">
         {data.map((item, index) => (
           <div key={index} className="flex items-start relative">
+            
+            {/* YEAR */}
             <div className="w-24 pr-6 text-right">
-              <p className="text-2xl">{item.year}</p>
+              <p className="text-2xl leading-tight">
+                {renderYear(item.year)}
+              </p>
             </div>
 
             <div className="relative pl-10 flex-1">
               <span className="absolute left-0 top-2 w-3 h-3 bg-red-500 rounded-full transform -translate-x-1/2" />
+
               <h2 className="text-lg">{item.title}</h2>
-              <h3 className="text-sm text-gray-600 hidden xl:block">
-                {item.location}
-              </h3>
+
+              {item.location && (
+                <h3 className="text-sm text-gray-600 hidden xl:block">
+                  {item.location}
+                </h3>
+              )}
+
               <h4 className="text-sm">{item.subtitle}</h4>
             </div>
+
           </div>
         ))}
       </div>
