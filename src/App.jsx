@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import FullIntro from "./components/FullIntro";
 import About from "./components/About";
 import Stats from "./components/Stats";
+import skill from "./components/skill";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
