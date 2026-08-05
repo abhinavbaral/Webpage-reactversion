@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="70" height="45" viewBox="0 8 70 34">
-  <text x="5" y="34"
-        font-size="40"
-        font-weight="700"
-        font-family="'Comic Sans MS', cursive, sans-serif">
-    <tspan fill="#22c55e">A</tspan>
-    <tspan fill="#ef4444" dx="-20">B</tspan>
-  </text>
-</svg>
