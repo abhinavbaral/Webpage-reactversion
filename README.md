@@ -110,3 +110,6 @@ Two services from one repo, or one service:
 | GET    | `/api/content`          | All page content (email/phone excluded)  |
 | GET    | `/api/contact/details`  | Email, phone, social links               |
 | POST   | `/api/contact`          | Submit enquiry — validated, rate limited |
+
+## Routes
+If you plan to use this project for your own porfilo please be sure to change as much as you can also this is still underdevelopment. 
