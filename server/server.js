@@ -46,11 +46,9 @@ app.use(
 app.use(compression());
 app.use(express.json({ limit: '64kb' }));
 
-app.use(
-  cors({
-    origin: isProd ? (process.env.ALLOWED_ORIGIN ?? false) : 'http://localhost:5173',
-  })
-);
+app.use(cors({
+  origin: process.env.FRONTEND_URL
+}));
 
 // --- API ------------------------------------------------------------------
 
