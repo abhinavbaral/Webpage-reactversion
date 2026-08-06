@@ -15,7 +15,7 @@ export default function App() {
   if (error) {
     return (
       <div className="boot">
-        Could not reach the server. Is it running on port 4000?
+        Could not reach the server.
       </div>
     );
   }

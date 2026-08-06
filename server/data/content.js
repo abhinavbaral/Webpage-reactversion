@@ -1,11 +1,7 @@
-// ---------------------------------------------------------------------------
-// Single source of truth for everything the site displays.
-// Edit this file to change the site. Nothing is hardcoded in the React components.
-// ---------------------------------------------------------------------------
 
 export const profile = {
-  name: 'Abhinav Baral',
-  shortName: 'BARAL',
+  name: 'Baral Abhinav',
+  shortName: 'ABHINAV',
   role: 'FULL STACK DEVELOPER',
   // The pitch. Not a list of titles — the thing the combination buys the client.
   promise: 'I build the whole product, and write what goes on it',
@@ -15,10 +11,10 @@ export const profile = {
   githubUrl: 'https://github.com/abhinavbaral',
   linkedinUrl: 'https://www.linkedin.com/in/abhinavbaral',
   email: 'abhinavbaral@gmail.com',
-  phone: '+977 9842795750',
+  phone: '+977 9844602018',
 };
 
-// Shown as a strip under the name. Order matters — lead with the anchor skill.
+
 export const disciplines = ['Web', 'Mobile', 'Backend', 'Words'];
 
 export const manifesto = {
@@ -28,7 +24,7 @@ export const manifesto = {
   body: 'The designer finishes and waits for the developer. The developer finishes and waits for someone to write the copy. The copy arrives and does not fit the layout it was written for. I do all three parts, so none of those waits exist. That is not a boast about range — it is the reason small projects actually ship on the date I gave you.',
 };
 
-// (01) ------------------------------------------------------------------------
+
 export const skillLegend = [
   { level: 'daily', label: 'Use daily' },
   { level: 'working', label: 'Working knowledge' },
@@ -80,7 +76,7 @@ export const stack = [
   {
     id: '04',
     title: 'WORDS',
-    // This is the differentiator. Keep it about the product, not about blogging.
+    
     body: 'The copy on the buttons, the empty states, the error messages, the landing page. Written by the person who built the screen it sits on, in English or Nepali.',
     tags: [
       { name: 'Product copy', level: 'daily' },
@@ -93,7 +89,7 @@ export const stack = [
   },
 ];
 
-// (02) ------------------------------------------------------------------------
+
 // !! REPLACE THESE WITH YOUR OWN MEASUREMENTS BEFORE GOING LIVE. !!
 //
 // Every number must be reproducible on demand. Run Lighthouse on your deployed
@@ -112,21 +108,19 @@ export const metrics = {
   ],
 };
 
-// (03) ------------------------------------------------------------------------
-// `kind` drives the badge on each card: WEB · MOBILE · FULL-STACK · WRITING.
-// It is the structural device that proves the range instead of claiming it.
+
 export const projects = [
-  {
-    no: '01',
-    year: '2026',
-    kind: 'MOBILE',
-    name: 'REPLACE ME',
-    tone: 'a',
-    body: 'Your strongest shipped mobile app goes here. Say what it does, who uses it, and one number — installs, records handled, users onboarded.',
-    tags: ['React Native', 'Expo', 'Node.js'],
-    live: null,
-    repo: null,
-  },
+  // {
+  //   no: '01',
+  //   year: '2026',
+  //   kind: 'MOBILE',
+  //   name: 'REPLACE ME',
+  //   tone: 'a',
+  //   body: 'Your strongest shipped mobile app goes here. Say what it does, who uses it, and one number — installs, records handled, users onboarded.',
+  //   tags: ['React Native', 'Expo', 'Node.js'],
+  //   live: null,
+  //   repo: null,
+  // },
   {
     no: '02',
     year: '2025',
@@ -160,19 +154,18 @@ export const projects = [
     live: null,
     repo: 'https://github.com/abhinavbaral/budgetbee',
   },
-  {
-    no: '05',
-    year: '2026',
-    kind: 'WRITING',
-    // A writing sample belongs in the work row, not in a separate services list.
-    // Treat it like any other project: what it was, who for, what changed.
-    name: 'REPLACE ME',
-    tone: 'b',
-    body: 'One writing engagement, described like an engineering project. What the client sells, what the page said before, what it says now, and what moved as a result.',
-    tags: ['Landing page', 'Product copy', 'English + Nepali'],
-    live: null,
-    repo: null,
-  },
+  // {
+  //   no: '05',
+  //   year: '2026',
+  //   kind: 'WRITING',
+
+  //   name: 'REPLACE ME',
+  //   tone: 'b',
+  //   body: 'One writing engagement, described like an engineering project. What the client sells, what the page said before, what it says now, and what moved as a result.',
+  //   tags: ['Landing page', 'Product copy', 'English + Nepali'],
+  //   live: null,
+  //   repo: null,
+  // },
   {
     no: '06',
     year: '2024',
@@ -186,7 +179,6 @@ export const projects = [
   },
 ];
 
-// (04) ------------------------------------------------------------------------
 export const process = [
   {
     no: '01',
@@ -210,9 +202,7 @@ export const process = [
   },
 ];
 
-// (05) ------------------------------------------------------------------------
-// Two tracks side by side. Education on the left, paid work on the right,
-// so a reader can see they overlap rather than follow one another.
+
 export const history = {
   studied: [
     {
@@ -239,7 +229,7 @@ export const history = {
   ],
   worked: [
     {
-      year: '2026',
+      year: '2025',
       title: 'Front-end developer',
       place: 'Techdebugger, Damak',
       note: 'React and Tailwind CSS UI components for client projects.',
@@ -260,8 +250,7 @@ export const history = {
   ],
 };
 
-// Relevant here because half the offer is writing — being able to write the
-// same landing page twice, once in each language, is a real service.
+
 export const languages = [
   { name: 'Nepali', level: 'Native', dots: 4 },
   { name: 'English', level: 'Professional', dots: 4 },
