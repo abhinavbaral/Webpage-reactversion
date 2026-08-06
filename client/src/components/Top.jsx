@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useActiveSection, useReveal } from '../hooks/useReveal.js';
-
+import profileImg from "../assets/img/profile.jpg";
 
 const SECTIONS = ['stack', 'proof', 'work', 'history', 'process'];
 const LABELS = {
@@ -205,8 +205,8 @@ export function Hero({ profile, disciplines = [] }) {
       </div>
 
       <div className="hero__badge" aria-hidden="true">
-        DEV
-      </div>
+  <img src={profileImg} alt="Profile" />
+</div>
     </header>
   );
 }
