@@ -1,7 +1,7 @@
 # abhinav-portfolio
 
 React (Vite) client + Express API for Abhinav Baral — full stack developer,
-mobile apps, and content writing.
+and mobile apps.
 
 Sections: hero → manifesto → (01) skills → (02) proof → (03) work →
 (05) studied & worked → (06) process → contact.

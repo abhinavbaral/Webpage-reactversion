@@ -6,7 +6,7 @@ export const profile = {
   // The pitch. Not a list of titles — the thing the combination buys the client.
   promise: 'I build the whole product, and write what goes on it',
   location: 'Jhapa, Koshi Province, Nepal',
-  availability: 'NEPAL · IST · REMOTE WORLDWIDE',
+  availability: 'NEPAL · NPT (UTC+5:45) · REMOTE WORLDWIDE',
   github: '@abhinavbaral',
   githubUrl: 'https://github.com/abhinavbaral',
   linkedinUrl: 'https://www.linkedin.com/in/abhinav-baral-126a071ba/',
@@ -15,13 +15,13 @@ export const profile = {
 };
 
 
-export const disciplines = ['Frontend', 'Backend', 'Mobile', 'Words'];
+export const disciplines = ['Frontend', 'Backend', 'Mobile'];
 
 export const manifesto = {
   eyebrow: 'WHY ONE PERSON INSTEAD OF THREE',
   lead: 'Most projects stall',
   highlight: 'at the handoff.',
-  body: 'The designer finishes and waits for the developer. The developer finishes and waits for someone to write the copy. The copy arrives and does not fit the layout it was written for. I do all three parts, so none of those waits exist. That is not a boast about range — it is the reason small projects actually ship on the date I gave you.',
+  body: 'The web app waits for the API. The API changes and the phone app breaks. Each fix waits for whoever owns the other half. I build all three, so there is no other half to wait for. That is not a boast about range — it is the reason small projects actually ship on the date I gave you.',
 };
 
 
@@ -72,21 +72,7 @@ export const stack = [
       { name: 'expo-updates', level: 'working' },
       { name: 'Android', level: 'working' },
     ],
-  },
-  {
-    id: '04',
-    title: 'WORDS',
-    
-    body: 'The copy on the buttons, the empty states, the error messages, the landing page. Written by the person who built the screen it sits on, in English or Nepali.',
-    tags: [
-      { name: 'Product copy', level: 'daily' },
-      { name: 'UX writing', level: 'daily' },
-      { name: 'Landing pages', level: 'daily' },
-      { name: 'Documentation', level: 'working' },
-      { name: 'English + नेपाली', level: 'daily' },
-    ],
-    feature: true,
-  },
+  }
 ];
 
 
@@ -123,40 +109,6 @@ export const projects = [
     // Shown instead of "Not deployed" when a project is live but not public.
     status: 'In daily use',
   },
-  {
-    no: '02',
-    year: '2025',
-    kind: 'WEB',
-    name: 'BUDGETBEE',
-    tone: 'b',
-    body: 'Personal finance tracker. Expense categorisation, running balances, and a persistence layer that survives a refresh.',
-    tags: ['JavaScript', 'LocalStorage', 'Charts'],
-    live: null,
-    repo: null, // private — set to https://github.com/abhinavbaral/budgetbee once public
-  },
-  {
-    no: '03',
-    year: '2024',
-    kind: 'WEB',
-    name: 'BUBBLE BURST',
-    tone: 'c',
-    body: 'Browser game on a canvas render loop. Collision detection, score state and a difficulty curve, no game engine.',
-    tags: ['HTML5 Canvas', 'JavaScript'],
-    live: null,
-    repo: null, // private — set to https://github.com/abhinavbaral/bubble-burst once public
-  },
-  // Template for a writing project — uncomment when you have one:
-  // {
-  //   no: '04',
-  //   year: '2026',
-  //   kind: 'WRITING',
-  //   name: 'REPLACE ME',
-  //   tone: 'b',
-  //   body: 'What the client sells, what the page said before, what it says now, and what moved as a result.',
-  //   tags: ['Landing page', 'Product copy', 'English + Nepali'],
-  //   live: null,
-  //   repo: null,
-  // },
 ];
 
 export const process = [
@@ -168,7 +120,7 @@ export const process = [
   {
     no: '02',
     title: 'STRUCTURE',
-    body: 'A written plan: screens, data shape, hosting, and who writes what. Agreed before a line of code.',
+    body: 'A written plan: screens, data shape, hosting, and what ships first. Agreed before a line of code.',
   },
   {
     no: '03',
@@ -223,9 +175,9 @@ export const history = {
     },
     {
       year: '2024–',
-      title: 'Freelance — web, mobile and copy',
+      title: 'Freelance — web and mobile',
       place: 'Remote',
-      note: 'Full builds for small businesses, from the database to the button labels.',
+      note: 'Full builds for small businesses, from the database to the screen.',
       current: true,
     },
   ],

@@ -194,7 +194,7 @@ export function Hero({ profile, disciplines = [] }) {
             </div>
             <div className="row">
               <dt>Builds</dt>
-              <dd>Full-stack · Mobile · Copy</dd>
+              <dd>Full-stack · Mobile</dd>
             </div>
             <div className="row">
               <dt>Status</dt>

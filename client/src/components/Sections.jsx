@@ -17,7 +17,7 @@ export function Stack({ stack, legend = [] }) {
   return (
     <section className="section shell" id="stack">
       <div className="reveal" ref={ref}>
-        <SectionHead no="01" title="What I work with" aside="Four disciplines" />
+        <SectionHead no="01" title="What I work with" aside="Three disciplines" />
 
         {legend.length > 0 ? (
           <ul className="legend">
