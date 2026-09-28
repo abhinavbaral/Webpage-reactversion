@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useActiveSection, useReveal } from '../hooks/useReveal.js';
 import profileImg from "../assets/img/profile.jpg";
 
-const SECTIONS = ['stack', 'proof', 'work', 'history', 'process'];
+// Add 'proof' back (after 'stack') when metrics.enabled is true in content.js.
+const SECTIONS = ['stack', 'work', 'history', 'process'];
 const LABELS = {
   stack: 'Skills',
   proof: 'Proof',
@@ -193,7 +194,7 @@ export function Hero({ profile, disciplines = [] }) {
             </div>
             <div className="row">
               <dt>Builds</dt>
-              <dd>Web · Mobile · Copy</dd>
+              <dd>Full-stack · Mobile · Copy</dd>
             </div>
             <div className="row">
               <dt>Status</dt>

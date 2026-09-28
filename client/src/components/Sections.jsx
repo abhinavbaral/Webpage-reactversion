@@ -91,7 +91,7 @@ export function Work({ projects }) {
   return (
     <section className="section" id="work">
       <div className="shell reveal" ref={ref}>
-        <SectionHead no="03" title="Selected work" aside="Scroll sideways" />
+        <SectionHead no="02" title="Selected work" aside="Scroll sideways" />
       </div>
 
       <div className="shell" style={{ maxWidth: 'var(--shell)' }}>
@@ -114,15 +114,15 @@ export function Work({ projects }) {
               </div>
 
               <div className="card__foot">
-                <a
-                  className="card__link"
-                  href={project.live ?? '#work'}
-                  aria-disabled={project.live ? undefined : 'true'}
-                  target={project.live ? '_blank' : undefined}
-                  rel={project.live ? 'noreferrer' : undefined}
-                >
-                  {project.live ? 'Live' : 'Not deployed'}
-                </a>
+                {project.live ? (
+                  <a className="card__link" href={project.live} target="_blank" rel="noreferrer">
+                    Live
+                  </a>
+                ) : (
+                  <span className="card__link" aria-disabled="true">
+                    {project.status ?? 'Not deployed'}
+                  </span>
+                )}
                 {project.repo ? (
                   <a
                     className="card__link"
@@ -152,7 +152,7 @@ export function Process({ steps }) {
   return (
     <section className="section shell" id="process">
       <div className="reveal" ref={ref}>
-        <SectionHead no="06" title="How the work goes" aside="Four steps, no mystery" />
+        <SectionHead no="04" title="How the work goes" aside="Four steps, no mystery" />
 
         <div className="process">
           {steps.map((step) => (
@@ -198,7 +198,7 @@ export function History({ history, languages = [] }) {
   return (
     <section className="section shell" id="history">
       <div className="reveal" ref={ref}>
-        <SectionHead no="05" title="Studied & worked" aside="They overlap" />
+        <SectionHead no="03" title="Studied & worked" aside="They overlap" />
 
         <div className="history">
           <Track label="Studied" items={history.studied} />

@@ -2,20 +2,20 @@
 export const profile = {
   name: 'Baral Abhinav',
   shortName: 'ABHINAV',
-  role: 'FULL STACK DEVELOPER',
+  role: 'FULL-STACK & MOBILE DEVELOPER',
   // The pitch. Not a list of titles — the thing the combination buys the client.
   promise: 'I build the whole product, and write what goes on it',
   location: 'Jhapa, Koshi Province, Nepal',
   availability: 'NEPAL · IST · REMOTE WORLDWIDE',
   github: '@abhinavbaral',
   githubUrl: 'https://github.com/abhinavbaral',
-  linkedinUrl: 'https://www.linkedin.com/in/abhinavbaral',
+  linkedinUrl: 'https://www.linkedin.com/in/abhinav-baral-126a071ba/',
   email: 'abhinavbaral@gmail.com',
   phone: '+977 9844602018',
 };
 
 
-export const disciplines = ['Web', 'Mobile', 'Backend', 'Words'];
+export const disciplines = ['Frontend', 'Backend', 'Mobile', 'Words'];
 
 export const manifesto = {
   eyebrow: 'WHY ONE PERSON INSTEAD OF THREE',
@@ -97,7 +97,7 @@ export const stack = [
 // cannot produce a number in front of a client, delete the row. If you cannot
 // fill at least three rows honestly, set enabled: false and the section vanishes.
 export const metrics = {
-  enabled: true,
+  enabled: false, // off until the rows hold real numbers
   eyebrow: 'MEASURED ON MY OWN SHIPPED PROJECTS · NOT ESTIMATES',
   note: 'Every number below is reproducible. Ask me to run it live.',
   rows: [
@@ -110,64 +110,32 @@ export const metrics = {
 
 
 export const projects = [
-  // {
-  //   no: '01',
-  //   year: '2026',
-  //   kind: 'MOBILE',
-  //   name: 'REPLACE ME',
-  //   tone: 'a',
-  //   body: 'Your strongest shipped mobile app goes here. Say what it does, who uses it, and one number — installs, records handled, users onboarded.',
-  //   tags: ['React Native', 'Expo', 'Node.js'],
-  //   live: null,
-  //   repo: null,
-  // },
+  {
+    no: '01',
+    year: '2026',
+    kind: 'MOBILE + WEB',
+    name: 'HAJIRIKHATA',
+    tone: 'a',
+    body: 'Attendance and payroll system for Eastern Auto Distributors, used by its staff every day. An employee app for check-in and pay, an admin dashboard, one payroll engine behind both on a dual Nepali BS/AD calendar, and Kurakani, its built-in real-time chat.',
+    tags: ['React Native', 'Expo', 'React', 'Node.js', 'Supabase', 'WebSockets'],
+    live: null,
+    repo: null,
+    // Shown instead of "Not deployed" when a project is live but not public.
+    status: 'In daily use',
+  },
   {
     no: '02',
     year: '2025',
-    kind: 'FULL-STACK',
-    name: 'HARMONICA',
-    tone: 'b',
-    body: 'Full-stack application across two repositories: a Node.js API service and a React client consuming it. Auth flow, protected routes, and a real deployment on both halves.',
-    tags: ['React', 'Node.js', 'Express', 'REST'],
-    live: null,
-    repo: 'https://github.com/abhinavbaral/harmonica-client',
-  },
-  {
-    no: '03',
-    year: '2025',
-    kind: 'FULL-STACK',
-    name: 'KURAKANI',
-    tone: 'c',
-    body: 'Real-time chat on WebSockets. Message delivery, presence state and reconnection handling written from scratch rather than pulled from a service.',
-    tags: ['JavaScript', 'WebSockets', 'Node.js'],
-    live: null,
-    repo: 'https://github.com/abhinavbaral/kurakani',
-  },
-  {
-    no: '04',
-    year: '2025',
     kind: 'WEB',
     name: 'BUDGETBEE',
-    tone: 'a',
+    tone: 'b',
     body: 'Personal finance tracker. Expense categorisation, running balances, and a persistence layer that survives a refresh.',
     tags: ['JavaScript', 'LocalStorage', 'Charts'],
     live: null,
-    repo: 'https://github.com/abhinavbaral/budgetbee',
+    repo: null, // private — set to https://github.com/abhinavbaral/budgetbee once public
   },
-  // {
-  //   no: '05',
-  //   year: '2026',
-  //   kind: 'WRITING',
-
-  //   name: 'REPLACE ME',
-  //   tone: 'b',
-  //   body: 'One writing engagement, described like an engineering project. What the client sells, what the page said before, what it says now, and what moved as a result.',
-  //   tags: ['Landing page', 'Product copy', 'English + Nepali'],
-  //   live: null,
-  //   repo: null,
-  // },
   {
-    no: '06',
+    no: '03',
     year: '2024',
     kind: 'WEB',
     name: 'BUBBLE BURST',
@@ -175,8 +143,20 @@ export const projects = [
     body: 'Browser game on a canvas render loop. Collision detection, score state and a difficulty curve, no game engine.',
     tags: ['HTML5 Canvas', 'JavaScript'],
     live: null,
-    repo: 'https://github.com/abhinavbaral/bubble-burst',
+    repo: null, // private — set to https://github.com/abhinavbaral/bubble-burst once public
   },
+  // Template for a writing project — uncomment when you have one:
+  // {
+  //   no: '04',
+  //   year: '2026',
+  //   kind: 'WRITING',
+  //   name: 'REPLACE ME',
+  //   tone: 'b',
+  //   body: 'What the client sells, what the page said before, what it says now, and what moved as a result.',
+  //   tags: ['Landing page', 'Product copy', 'English + Nepali'],
+  //   live: null,
+  //   repo: null,
+  // },
 ];
 
 export const process = [
@@ -206,8 +186,8 @@ export const process = [
 export const history = {
   studied: [
     {
-      year: '2019',
-      title: 'Started with HTML, CSS and JavaScript',
+      year: '2018–19',
+      title: 'HTML, CSS and JavaScript, then React',
       place: 'Self-taught',
     },
     {
@@ -235,10 +215,11 @@ export const history = {
       note: 'React and Tailwind CSS UI components for client projects.',
     },
     {
-      year: '2026',
-      title: 'Web development intern',
+      year: '2026–',
+      title: 'Software developer (in-house)',
       place: 'Eastern Auto Distributors, Biratnagar',
-      note: 'Built the responsive business site and shipped UI improvements.',
+      note: 'Built and maintain HajiriKhata, the company attendance and payroll system: mobile app, admin dashboard and API.',
+      current: true,
     },
     {
       year: '2024–',
