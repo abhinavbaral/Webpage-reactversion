@@ -741,6 +741,24 @@ body {
   pointer-events: none;
 }
 
+.card__status {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.card__status::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
 .card .tag {
   border-color: currentColor;
   opacity: 0.75;
@@ -946,17 +964,162 @@ body {
   color: var(--accent);
 }
 
-/* Loading / error ----------------------------------------------------------- */
+/* Loader -------------------------------------------------------------------
+   The name is drawn twice: an outline, and an accent-coloured copy clipped to
+   the current progress. The loader wipes upward to reveal the page. */
 
-.boot {
-  min-height: 100vh;
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
   display: grid;
-  place-items: center;
+  align-items: end;
+  padding: var(--gutter);
+  background: var(--paper);
+  color: var(--ink);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.loader.is-leaving {
+  clip-path: inset(0 0 100% 0);
+}
+
+.loader__stage {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+}
+
+.loader__name {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 19vw, 17rem);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.loader__outline,
+.loader__fill {
+  display: block;
+}
+
+.loader__outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ink-mute);
+}
+
+.loader__fill {
+  position: absolute;
+  inset: 0;
+  color: var(--accent);
+  clip-path: inset(0 calc(100% - var(--p, 0%)) 0 0);
+}
+
+.loader__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.loader__text,
+.loader__count {
+  margin: 0;
+}
+
+.loader__count {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.loader__retry {
+  flex: none;
+  padding: 0.6rem 1.1rem;
+  font: inherit;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 0;
+  cursor: pointer;
+}
+
+.loader__retry:hover {
+  filter: brightness(1.08);
+}
+
+.loader__retry:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.loader__terminal {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--band);
+  border: 1px solid var(--band-rule);
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
+  line-height: 1.7;
+  color: var(--on-band-soft);
+}
+
+.loader__line {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.loader__line--cmd {
+  color: var(--on-band);
+}
+
+.loader__line--dim {
+  color: var(--on-band-mute);
+}
+
+.loader__line--ok,
+.loader__line--err {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.loader__cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-top: 0.2rem;
+  vertical-align: text-bottom;
+  background: var(--on-band);
+  animation: loader-blink 1s steps(1) infinite;
+}
+
+@keyframes loader-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.loader.has-error .loader__outline {
+  -webkit-text-stroke-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    transition: opacity 0.2s linear;
+  }
+  .loader.is-leaving {
+    clip-path: none;
+    opacity: 0;
+  }
 }
 
 /* ==========================================================================
