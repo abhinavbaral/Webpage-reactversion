@@ -78,6 +78,20 @@ export function Contact({ profile }) {
                 'loading…'
               )}
             </p>
+            <p className="contact__detail">
+              WhatsApp:{' '}
+              {details ? (
+                <a
+                  href={`https://wa.me/${details.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat on WhatsApp
+                </a>
+              ) : (
+                'loading…'
+              )}
+            </p>
             <p className="contact__detail">Based in {profile.location}</p>
           </div>
 
