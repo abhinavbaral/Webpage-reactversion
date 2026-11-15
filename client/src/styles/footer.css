@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  background: var(--band);
+  color: var(--on-band-mute);
+  padding-block: 1.75rem;
+  border-top: 1px dashed var(--band-rule);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}

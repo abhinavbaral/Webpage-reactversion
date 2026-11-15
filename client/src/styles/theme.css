@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Theme toggle — two axes, four combinations
+   ========================================================================== */
+
+.nav__end {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.theme {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+}
+
+.theme__btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme__btn:hover {
+  background: var(--paper-warm);
+}
+
+.theme__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1.5px solid var(--ink);
+  display: block;
+}
+
+@media (max-width: 420px) {
+  .nav__cta {
+    display: none;
+  }
+}
+
+/* Colour transitions on theme change, but never for people who asked for
+   reduced motion (the global reduced-motion block already zeroes these). */
+body,
+.nav,
+.manifesto,
+.contact,
+.footer,
+.card,
+.hero__card,
+.stack__row--feature {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

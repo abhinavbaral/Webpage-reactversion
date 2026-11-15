@@ -31,9 +31,37 @@ npm start        # Express serves the API *and* the built client on :4000
 
 ## Where the content lives
 
-**`server/data/content.js` is the only file you edit to change the site.**
+**`client/src/data/content.js` is the only file you edit to change the site.**
 Nothing is hardcoded in the React components. Change a project name there and it
-changes on the page.
+changes on the page. The page renders straight from this file, so it never waits
+on the server. Your email and phone live in `server/data/contact.js` instead and
+are served by the API, so they stay out of the page source.
+
+## Project structure
+
+```
+client/
+  index.html            meta tags, social preview, static loader shell
+  public/               favicon, robots.txt, theme-init.js, og-image.png, downloads/
+  src/
+    main.jsx            entry: fonts, styles, <App />
+    App.jsx             page order + intro loader
+    data/content.js     all public content
+    lib/api.js          contact form + server warm-up
+    lib/boot.js         checks the loader waits on (fonts, image, server ping)
+    hooks/              useReveal, useActiveSection
+    components/
+      layout/           Nav, ThemeToggle, Footer
+      sections/         Hero, Manifesto, Stack, Metrics, Work, History, Process, Contact
+      ui/               Arrow, SectionHead
+      Loader/           intro screen + terminal view
+    styles/             one CSS file per section; index.css sets the order
+server/
+  server.js             Express: security headers, CORS, static client
+  routes/contact.js     /api/contact and /api/contact/details
+  data/contact.js       private email and phone
+scripts/                contrast_check.py
+```
 
 ## Before you deploy — five things
 
@@ -60,8 +88,10 @@ changes on the page.
 4c. **Check `history`.** I inferred the dates from your current site. The
    `current: true` flag puts the crimson "Now" badge on an entry.
 
-5. **Set `ALLOWED_ORIGIN`.** Copy `server/.env.example` to `.env` and point it at
-   your real domain, or CORS will reject your own frontend in production.
+5. **CORS.** If the Node server also serves the built client (the default here),
+   nothing is needed. If the client is on another domain, set `FRONTEND_URL` on
+   the server to the exact origins, comma separated, and `VITE_API_BASE` in the
+   client build to the API's URL.
 
 ## Theming — two axes, four combinations
 
@@ -100,16 +130,14 @@ Two services from one repo, or one service:
 **One service (simplest)**
 - Build command: `npm run build`
 - Start command: `npm start`
-- Environment: `NODE_ENV=production`, `ALLOWED_ORIGIN=https://your-domain`
+- Environment: `NODE_ENV=production`, (`FRONTEND_URL` only if the client is on a different domain)
 
 ## Routes
 
 | Method | Path                    | Purpose                                  |
 |--------|-------------------------|------------------------------------------|
 | GET    | `/api/health`           | Uptime check                             |
-| GET    | `/api/content`          | All page content (email/phone excluded)  |
 | GET    | `/api/contact/details`  | Email, phone, social links               |
 | POST   | `/api/contact`          | Submit enquiry — validated, rate limited |
 
-## Routes
 If you plan to use this project for your own porfilo please be sure to change as much as you can also this is still underdevelopment. 

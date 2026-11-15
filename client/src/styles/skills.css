@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Skill levels — honest proficiency, no percentage bars
+   ========================================================================== */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+}
+
+.legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.legend__swatch {
+  width: 22px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+}
+
+.legend__item--daily .legend__swatch {
+  background: var(--ink);
+}
+
+.legend__item--working .legend__swatch {
+  background: transparent;
+  border-style: dashed;
+}
+
+.tag--daily {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.tag--working {
+  background: transparent;
+  border-style: dashed;
+  color: var(--ink-soft);
+}
+
+.stack__row:hover .tag--daily {
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-color: var(--accent-ink);
+}
+
+.stack__row--feature .tag--daily {
+  background: var(--ink);
+  color: var(--sand);
+}
+
+.card .tag--daily,
+.card .tag--working {
+  background: transparent;
+  color: inherit;
+  border-color: currentColor;
+  border-style: solid;
+}

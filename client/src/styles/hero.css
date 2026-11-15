@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Hero — the signature element
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding-block: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 4rem);
+}
+
+.hero__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: end;
+  padding-top: clamp(1rem, 3vw, 2rem);
+}
+
+.hero__name {
+  font-size: clamp(3.25rem, 13.5vw, 11.5rem);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__name span {
+  display: block;
+}
+
+.hero__name .line-2 {
+  margin-left: clamp(0px, 3vw, 3.5rem);
+}
+
+.hero__promise {
+  font-family: var(--font-mono);
+  font-size: clamp(0.8125rem, 1.4vw, 1rem);
+  line-height: 1.6;
+  max-width: 34ch;
+  color: var(--ink-soft);
+  margin: 1.75rem 0 0;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.hero__badge {
+  position: absolute;
+  top: clamp(18%, 20%, 26%);
+  left: clamp(48%, 52%, 56%);
+  width: clamp(66px, 9vw, 128px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--band);
+  border: 3px solid var(--accent);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero__badge {
+  overflow: hidden;
+}
+
+.hero__badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 35%; /* face sits right of centre in the source photo */
+}
+
+.hero__card {
+  border: 1.5px solid var(--ink);
+  background: var(--sand);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.hero__card dl {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.hero__card .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero__card dt {
+  color: var(--ink-mute);
+}
+
+.hero__card dd {
+  margin: 0;
+  font-weight: 500;
+  text-align: right;
+}
+
+.hero__stamp {
+  border: 1px solid var(--ink);
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--paper);
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__badge {
+    left: auto;
+    right: 4%;
+    top: 6%;
+  }
+}

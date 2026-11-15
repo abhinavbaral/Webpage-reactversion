@@ -1,52 +1,62 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { getContent } from './lib/api.js';
-import Loader from './components/Loader.jsx';
-import { Nav, Hero, Manifesto } from './components/Top.jsx';
-import { Stack, Metrics, Work, History, Process } from './components/Sections.jsx';
-import { Contact, Footer } from './components/Contact.jsx';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
+import {
+  profile,
+  disciplines,
+  manifesto,
+  skillLegend,
+  stack,
+  metrics,
+  projects,
+  processSteps,
+  history,
+  languages,
+} from './data/content.js';
+import { bootSeen } from './lib/boot.js';
+import Loader from './components/Loader/Loader.jsx';
+import { Nav } from './components/layout/Nav.jsx';
+import { Footer } from './components/layout/Footer.jsx';
+import { Hero } from './components/sections/Hero.jsx';
+import { Manifesto } from './components/sections/Manifesto.jsx';
+import { Stack } from './components/sections/Stack.jsx';
+import { Metrics } from './components/sections/Metrics.jsx';
+import { Work } from './components/sections/Work.jsx';
+import { History } from './components/sections/History.jsx';
+import { Process } from './components/sections/Process.jsx';
+import { Contact } from './components/sections/Contact.jsx';
 
 export default function App() {
-  const [content, setContent] = useState(null);
-  const [error, setError] = useState(null);
-  const [loaderDone, setLoaderDone] = useState(false);
+  // The intro plays once per session. Later loads go straight to the page.
+  const [intro] = useState(() => !bootSeen());
+  const [showSite, setShowSite] = useState(!intro);
+  const [introDone, setIntroDone] = useState(!intro);
 
-  const load = useCallback(() => {
-    setError(null);
-    getContent()
-      .then(setContent)
-      .catch((err) => setError(err.message));
-  }, []);
+  // Without an intro there is nothing to swap, so drop the static shell.
+  useLayoutEffect(() => {
+    if (!intro) document.getElementById('boot')?.remove();
+  }, [intro]);
 
-  useEffect(() => {
-    load();
-  }, [load]);
-
-  const handleDone = useCallback(() => setLoaderDone(true), []);
+  // The page mounts as the loader starts to lift, so its entrance animations
+  // play in view instead of behind the loader.
+  const handleLeave = useCallback(() => setShowSite(true), []);
+  const handleDone = useCallback(() => setIntroDone(true), []);
 
   return (
     <>
-      {content && (
+      {showSite && (
         <>
-          <Nav profile={content.profile} />
-          <Hero profile={content.profile} disciplines={content.disciplines} />
-          <Manifesto manifesto={content.manifesto} />
-          <Stack stack={content.stack} legend={content.skillLegend} />
-          <Metrics metrics={content.metrics} />
-          <Work projects={content.projects} />
-          <History history={content.history} languages={content.languages} />
-          <Process steps={content.process} />
-          <Contact profile={content.profile} />
-          <Footer profile={content.profile} />
+          <Nav profile={profile} />
+          <Hero profile={profile} disciplines={disciplines} />
+          <Manifesto manifesto={manifesto} />
+          <Stack stack={stack} legend={skillLegend} />
+          <Metrics metrics={metrics} />
+          <Work projects={projects} />
+          <History history={history} languages={languages} />
+          <Process steps={processSteps} />
+          <Contact profile={profile} />
+          <Footer profile={profile} />
         </>
       )}
-      {!loaderDone && (
-        <Loader
-          ready={Boolean(content)}
-          error={error}
-          onRetry={load}
-          onDone={handleDone}
-        />
-      )}
+      {!introDone && <Loader onLeave={handleLeave} onDone={handleDone} />}
     </>
   );
 }

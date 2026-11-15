@@ -3,21 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abhinav Baral — Front-end developer</title>
+    <script src="/theme-init.js"></script>
+
+    <title>Abhinav Baral — Full-stack &amp; mobile developer</title>
     <meta
       name="description"
-      content="Front-end developer in Jhapa, Nepal. React, Node and interfaces that stay maintainable after launch."
+      content="Full-stack and mobile developer in Jhapa, Nepal. I build the web app, the API and the phone app, so small projects ship on the date I gave you."
     />
-    <meta name="theme-color" content="#14110F" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+    <link rel="canonical" href="https://abhiavbaral.com.np/" />
+    <meta name="theme-color" content="#f0eee9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Abhinav Baral" />
+    <meta property="og:title" content="Abhinav Baral — Full-stack &amp; mobile developer" />
+    <meta
+      property="og:description"
+      content="One person instead of three: web app, API and phone app, built to ship on the date promised."
     />
+    <meta property="og:url" content="https://abhiavbaral.com.np/" />
+    <meta property="og:image" content="https://abhiavbaral.com.np/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ABHINAV in large red and outlined letters. Full-stack and mobile developer." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abhinav Baral — Full-stack &amp; mobile developer" />
+    <meta
+      name="twitter:description"
+      content="One person instead of three: web app, API and phone app, built to ship on the date promised."
+    />
+    <meta name="twitter:image" content="https://abhiavbaral.com.np/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abhinav Baral",
+        "jobTitle": "Full-stack and mobile developer",
+        "url": "https://abhiavbaral.com.np/",
+        "address": { "@type": "PostalAddress", "addressLocality": "Jhapa", "addressRegion": "Koshi Province", "addressCountry": "NP" },
+        "sameAs": [
+          "https://github.com/abhinavbaral",
+          "https://www.linkedin.com/in/abhinav-baral-126a071ba/"
+        ]
+      }
+    </script>
+
+    <!-- Painted before any JavaScript arrives, then swapped for the real loader. -->
+    <style>
+      #boot { position: fixed; inset: 0; z-index: 99; background: #f0eee9; }
+      [data-theme='dark'] #boot { background: #131211; }
+      #boot i { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: #d01b2c; animation: boot-bar 1.4s cubic-bezier(0.2, 0.7, 0.1, 1) forwards; }
+      [data-theme='dark'] #boot i { background: #f03b4c; }
+      @keyframes boot-bar { to { width: 35%; } }
+    </style>
   </head>
   <body>
+    <div id="boot" aria-hidden="true"><i></i></div>
     <div id="root"></div>
+    <noscript>
+      <style>#boot { display: none; }</style>
+      <p style="font-family: system-ui, sans-serif; padding: 2rem; max-width: 40rem">
+        <strong>Abhinav Baral</strong> — full-stack and mobile developer in Jhapa, Nepal.
+        This site needs JavaScript to display. Find me on
+        <a href="https://github.com/abhinavbaral">GitHub</a> or
+        <a href="https://www.linkedin.com/in/abhinav-baral-126a071ba/">LinkedIn</a>.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,0 +1,189 @@
+/* Loader --------------------------------------------------------------------
+   Letters rise in one by one and fill with the accent as progress passes them.
+   If loading drags, a terminal reports each check. The loader wipes upward to
+   reveal the page. */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: var(--gutter);
+  background: var(--paper);
+  color: var(--ink);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.loader.is-leaving {
+  clip-path: inset(0 0 100% 0);
+}
+
+.loader__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.loader__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.loader__top span:first-child {
+  white-space: nowrap;
+}
+
+.loader__top span:last-child {
+  text-align: right;
+}
+
+.loader__name {
+  align-self: center;
+  display: flex;
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 17vw, 16rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.loader__letter {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--ink-mute);
+  transform: translateY(105%);
+  animation: loader-rise 0.6s cubic-bezier(0.2, 0.7, 0.1, 1) forwards;
+  animation-delay: calc(var(--i) * 55ms);
+  transition: color 0.25s ease, -webkit-text-stroke-color 0.25s ease;
+}
+
+.loader__letter.is-on {
+  color: var(--accent);
+  -webkit-text-stroke-color: var(--accent);
+}
+
+@keyframes loader-rise {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.loader__foot {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+}
+
+.loader__bar {
+  height: 3px;
+  background: var(--rule);
+}
+
+.loader__bar i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.loader__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.loader__text,
+.loader__count {
+  margin: 0;
+}
+
+.loader__count {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vw, 7rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.loader__terminal {
+  flex: 1;
+  max-width: 24rem;
+  padding: 0.8rem 1rem;
+  background: var(--band);
+  border: 1px solid var(--band-rule, var(--rule));
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--on-band-soft);
+}
+
+.loader__line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  color: var(--on-band);
+}
+
+.loader__line--note {
+  color: var(--on-band-mute);
+}
+
+.loader__state.is-wait {
+  color: var(--on-band-mute);
+}
+
+.loader__state.is-ok {
+  color: var(--on-band);
+}
+
+.loader__state.is-fail {
+  color: var(--accent);
+}
+
+.loader__cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.95em;
+  margin-left: 0.35em;
+  vertical-align: text-bottom;
+  background: var(--on-band);
+  animation: loader-blink 1s steps(1) infinite;
+}
+
+@keyframes loader-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    transition: opacity 0.2s linear;
+  }
+  .loader.is-leaving {
+    clip-path: none;
+    opacity: 0;
+  }
+  .loader__letter {
+    transform: none;
+  }
+}

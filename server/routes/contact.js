@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { profile } from '../data/content.js';
+import { contact } from '../data/contact.js';
 
 const router = Router();
 
@@ -47,10 +47,10 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  */
 router.get('/details', (_req, res) => {
   res.json({
-    email: profile.email,
-    phone: profile.phone,
-    github: profile.githubUrl,
-    linkedin: profile.linkedinUrl,
+    email: contact.email,
+    phone: contact.phone,
+    github: contact.githubUrl,
+    linkedin: contact.linkedinUrl,
   });
 });
 

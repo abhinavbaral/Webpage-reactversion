@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Process
+   ========================================================================== */
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.step {
+  text-align: center;
+}
+
+.step__disc {
+  width: clamp(64px, 8vw, 90px);
+  aspect-ratio: 1;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2vw, 1.6rem);
+  background: var(--paper);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.step:hover .step__disc {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+.step__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.step__body {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 26ch;
+  margin-inline: auto;
+}
+
+@media (max-width: 820px) {
+  .process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.25rem;
+  }
+}

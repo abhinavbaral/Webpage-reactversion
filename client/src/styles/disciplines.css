@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Disciplines strip — range shown as structure, not as a job-title list
+   ========================================================================== */
+
+.disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.disciplines__item {
+  font-family: var(--font-mono);
+  font-size: clamp(0.6875rem, 1.1vw, 0.8125rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.disciplines__item + .disciplines__item::before {
+  content: '/';
+  margin-right: 0.9rem;
+  color: var(--accent);
+}
+
+/* Featured stack row — the one that is not like the others ----------------- */
+
+.stack__row--feature {
+  background: var(--sand);
+  padding-inline: 1.25rem;
+  border-top-color: var(--ink);
+}
+
+.stack__row--feature .stack__no {
+  color: var(--ink);
+}
+
+.stack__row--feature .stack__title::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 4px;
+  margin-top: 0.6rem;
+  background: var(--accent);
+}
+
+/* Card kind badge ---------------------------------------------------------- */
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card__kind {
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  opacity: 1;
+}
