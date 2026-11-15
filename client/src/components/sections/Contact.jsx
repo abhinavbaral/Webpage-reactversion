@@ -56,11 +56,7 @@ export function Contact({ profile }) {
         <div className="contact__grid">
           <div>
             <p className="eyebrow eyebrow--accent">// Available for work</p>
-            <h2 className="contact__head">
-              Write
-              <br />
-              me →
-            </h2>
+            <h2 className="contact__head">Contact</h2>
 
             <p className="contact__detail">
               Email:{' '}
@@ -74,6 +70,20 @@ export function Contact({ profile }) {
               Phone:{' '}
               {details ? (
                 <a href={`tel:${details.phone.replace(/\s/g, '')}`}>{details.phone}</a>
+              ) : (
+                'loading…'
+              )}
+            </p>
+            <p className="contact__detail">
+              WhatsApp:{' '}
+              {details ? (
+                <a
+                  href={`https://wa.me/${details.phone.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat on WhatsApp
+                </a>
               ) : (
                 'loading…'
               )}
